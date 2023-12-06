@@ -1,0 +1,62 @@
+Planning:
+1)Winning squares light up on a win and reset for the next game,
+
+
+2)Players can enter names
+
+3)There is a league table saving the scores of each game
+
+4)There is a message when a draw occurs and the table resets
+
+5)There is a a next game button
+
+6) There is a league reset button (refresh the page)
+
+7) The time travel bar stops counting after a each game/the old moves are cleared from the browser
+
+
+
+
+// - Nice use of components 
+// - Tests added, though not sure all of them are useful - think about testing from a user perspective, not implementation details 
+// - Winning squares highlighted 
+// - League table works 
+// - Player names can be added and passed to league table
+
+Improvements
+
+// Would be nice if the winning lines cleared when a new game is started 
+// Would be nice to have a message when the game is a draw or some handling of that case 
+// A reset button would be nice instead of having to refresh the page or go back to Step 0
+
+// In indexGame.js: 
+// resetWinner / setResetWinner - unused code 
+// const [resetWinner, setResetWinner] = useState(true); 
+// was this going to be used in a feature that was never completed?
+
+// In indexGame.js: 
+// This seems like an odd pattern for updating the points state. This could have been approached in a cleaner way. 
+// let { xState } = points; 
+// xState += 1; 
+// setPoints({ ...points, xState });
+
+// In indexGame.js: 
+// WhoStarts doesn't really seem to add anything except a random message? Would have been nice to see this impact functionality somehow/
+
+// In indexWhoStarts.js and indexPlayer.js: 
+// Compile error - React must be in scope when using JSX 
+// import { useState } from "react" should be import React, { useState } from "react"
+
+// In indexPlayer.js: 
+// Created state twice for player names, once here and once in src/App/components/Game/indexGame.js 
+// Could this have been done in one place and passed down as props?
+
+// In indexPlayer.js: 
+// Naming conventions 
+// const NameHandler - JavaScript naming convention is camelCase so this should be nameHandler 
+// indexWhoStarts.js - const HandleClick - same thing, should be handleClick
+
+// In indexGame.js: 
+// winningMove = winner[1]; 
+// setWinning(winningMove); 
+// Could have just been setWinning(winner[1])?

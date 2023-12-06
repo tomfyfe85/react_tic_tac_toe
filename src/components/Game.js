@@ -8,7 +8,7 @@ export default function Game() {
   const currentSquares = history[currentMove];   
   const xIsNext = currentMove % 2 === 0
 
-  console.log(currentSquares)
+  // console.log(currentSquares)
 
 
   function handlePlay(nextSquares) {

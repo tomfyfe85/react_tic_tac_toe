@@ -20,7 +20,7 @@ export default function Board({xIsNext, squares, onPlay}) {
   } else {
     status = "Next player: " + (xIsNext ? "X" : "O" )
   }
- 
+
   return (
     <>
       <div className="status">{status}</div>
